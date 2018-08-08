@@ -17,8 +17,9 @@ class Shiporders
      */
     private $orderid;
 
-    /**
-     * @ORM\Column(type="integer")
+     /**
+     * @ORM\OneToMany(targetEntity="People", mappedBy="Shiporder", cascade={"persist"})
+     * @var ArrayCollection|Task[]
      */
     private $orderperson;
 
@@ -46,6 +47,8 @@ class Shiporders
     {
         $this->name = $name;
         $this->description = $description;
+
+        $this->orderperson = new ArrayCollection();
     }
 
     public function getId()

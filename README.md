@@ -15,7 +15,9 @@
 - As dependências (vendor) não estão inclusas, deve-se rodar o composer para adquiri-las
 - Existem algumas coisas bem feias pois eu tive que aprender outras coisas do teste então eu dei prioridade para que funcionasse e não pra que ficasse lindo, tanto que nem mudei a cara da tela inicial do laravel
 - Comandos que podem ser necessários:
+<br>
 php artisan app:name S2Test
+<br>
 php artisan doctrine:schema:create 
 
 ## License

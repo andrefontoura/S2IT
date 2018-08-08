@@ -58,8 +58,7 @@ class HomeController extends Controller
                     try {
                         $people = new People(
                             $person->personid,
-                            $person->personname,
-                            $person->person_id
+                            $person->personname
                         );
                 
                         $em->persist($people);
@@ -77,7 +76,7 @@ class HomeController extends Controller
             }
         }
 
-        dd('not show');
+        return back();
     }
 
     /**
@@ -134,5 +133,14 @@ class HomeController extends Controller
     public function destroy(Home $home)
     {
         //
+    }
+
+    public function getPeople(Request $request,EntityManagerInterface $em)
+    {
+        $people = $em->getRepository(People::class)->findAll();
+
+        return response()->json([
+            'data' => $people
+        ]);
     }
 }

@@ -14,6 +14,8 @@
 Route::get('/','HomeController@index');
 Route::post('home/upload','HomeController@upload');
 
+Route::get('home/getPeople','HomeController@getPeople');
+
 Route::get('test-add', function () {
     $task = new \TodoList\Entities\Task('Make test app', 'Create the test application for the Sitepoint article.');
 

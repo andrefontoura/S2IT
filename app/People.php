@@ -27,8 +27,14 @@ class People
      */
     //private $phone;
 
-    public function __construct($personname)
+    /**
+     * User constructor.
+     * @param $personid
+     * @param $personname
+     */
+    public function __construct($personid, $personname)
     {
+        $this->personid = $personid;
         $this->personname = $personname;
         //$this->description = $description;
     }
@@ -46,6 +52,11 @@ class People
     public function setName($name)
     {
         $this->personname = $name;
+    }
+
+    public function setId($id)
+    {
+        $this->personid = $id;
     }
 
 }
